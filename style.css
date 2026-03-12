@@ -547,11 +547,10 @@ em { font-style: italic; color: var(--amber); }
 }
 .leg-items {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   gap: 10px;
-  flex-shrink: 0;
   padding: 10px 0;
-  overflow-x: auto;
+  overflow-x: visible;
   scrollbar-width: none;
 }
 .leg-items::-webkit-scrollbar { display: none; }
@@ -740,6 +739,19 @@ em { font-style: italic; color: var(--amber); }
     gap: 8px;
     transition: background .15s, color .15s;
   }
+@media (max-width:640px){
+
+  .legend-inner{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .leg-title{
+    border-right: none;
+    padding-bottom: 6px;
+  }
+
+}
   .tab-select-dropdown button:last-child { border-bottom: none; }
   .tab-select-dropdown button:hover { background: var(--bg2); color: var(--text); }
   .tab-select-dropdown button.active { color: var(--amber); }
