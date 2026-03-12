@@ -22,17 +22,6 @@ if (tog && mob) {
   }));
 }
 
-// Scroll reveal
-const els = document.querySelectorAll('.reveal, .feat, .doc-row, .g-img, .aside-block');
-const io = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-}, { threshold: 0.07, rootMargin: '0px 0px -20px 0px' });
-els.forEach((el, i) => {
-  el.classList.add('reveal');
-  el.style.transitionDelay = (i % 6) * 0.04 + 's';
-  io.observe(el);
-});
-
 // Stat counters
 document.querySelectorAll('[data-target]').forEach(el => {
   const cio = new IntersectionObserver(([e]) => {
